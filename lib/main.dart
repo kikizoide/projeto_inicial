@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
-main() {}
+main() {
+  runApp(const PerguntaApp());
+}
 
-// ignore: use_key_in_widget_constructors
 class PerguntaApp extends StatelessWidget {
+  const PerguntaApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
