@@ -5,6 +5,13 @@ main() {
   runApp(const PerguntaApp());
 }
 
+var perguntaSelecionada = 0;
+
+void responder() {
+  perguntaSelecionada++;
+  print('Pergunta respondida!');
+}
+
 class PerguntaApp extends StatelessWidget {
   const PerguntaApp({super.key});
 
@@ -21,14 +28,10 @@ class PerguntaApp extends StatelessWidget {
         title: const Text('Perguntas'),
       ),
       body: Column(children: <Widget>[
-        Text(perguntas[0]),
+        Text(perguntas[perguntaSelecionada]),
         ElevatedButton(
           child: const Text('Resposta 1'),
-          onPressed: () {
-            if (kDebugMode) {
-              print('Resposta 1 selecionada!');
-            }
-          },
+          onPressed: responder,
         ),
         ElevatedButton(
           onPressed: () => print('Resposta 2 selecionada!'),
